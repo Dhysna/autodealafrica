@@ -1,0 +1,153 @@
+.car-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffd700;
+  color: #333;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.car-image {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.car-emoji {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.placeholder-image p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.car-info {
+  padding: 20px;
+}
+
+.car-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.car-year {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.car-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.detail-icon {
+  font-size: 1.2rem;
+}
+
+.car-description {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.car-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #667eea;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.car-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.car-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.btn-contact {
+  background: #667eea;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background: #5568d3;
+  transform: scale(1.05);
+}
+
+.seller-info {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.seller-info p {
+  margin: 3px 0;
+  color: #555;
+}
+
+.seller-info strong {
+  color: #333;
+}
