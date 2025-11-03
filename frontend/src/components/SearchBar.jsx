@@ -23,30 +23,30 @@ function SearchBar({ filters, setFilters }) {
         <input
           type="text"
           name="search"
-          placeholder="Search by brand, model, or description..."
+          placeholder="Rechercher par marque, modèle ou description..."
           value={filters.search}
           onChange={handleChange}
           className="search-input"
         />
 
         <select name="fuel" value={filters.fuel} onChange={handleChange} className="filter-select">
-          <option value="">Fuel Type</option>
-          <option value="Petrol">Petrol</option>
+          <option value="">Type de Carburant</option>
+          <option value="Petrol">Essence</option>
           <option value="Diesel">Diesel</option>
-          <option value="Electric">Electric</option>
-          <option value="Hybrid">Hybrid</option>
+          <option value="Electric">Électrique</option>
+          <option value="Hybrid">Hybride</option>
         </select>
 
         <select name="transmission" value={filters.transmission} onChange={handleChange} className="filter-select">
           <option value="">Transmission</option>
-          <option value="Automatic">Automatic</option>
-          <option value="Manual">Manual</option>
+          <option value="Automatic">Automatique</option>
+          <option value="Manual">Manuelle</option>
         </select>
 
         <input
           type="number"
           name="minPrice"
-          placeholder="Min Price"
+          placeholder="Prix Min"
           value={filters.minPrice}
           onChange={handleChange}
           className="price-input"
@@ -55,14 +55,14 @@ function SearchBar({ filters, setFilters }) {
         <input
           type="number"
           name="maxPrice"
-          placeholder="Max Price"
+          placeholder="Prix Max"
           value={filters.maxPrice}
           onChange={handleChange}
           className="price-input"
         />
 
         <button onClick={handleReset} className="btn-reset">
-          Reset
+          Réinitialiser
         </button>
       </div>
     </div>

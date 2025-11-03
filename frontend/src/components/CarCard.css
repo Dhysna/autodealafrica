@@ -1,35 +1,37 @@
 .car-card {
-  background: white;
+  background: var(--bg-white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-md);
   transition: all 0.3s ease;
   position: relative;
+  border: 1px solid var(--border-color);
 }
 
 .car-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-orange);
 }
 
 .featured-badge {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: #ffd700;
-  color: #333;
+  background: linear-gradient(135deg, var(--primary-gold), var(--primary-orange));
+  color: white;
   padding: 6px 15px;
   border-radius: 20px;
   font-weight: 700;
   font-size: 0.85rem;
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-sm);
 }
 
 .car-image {
   width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--green-dark) 100%);
 }
 
 .placeholder-image {
@@ -80,7 +82,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-medium);
 }
 
 .detail-icon {
@@ -88,7 +90,7 @@
 }
 
 .car-description {
-  color: #666;
+  color: var(--text-medium);
   font-size: 0.95rem;
   margin-bottom: 15px;
   line-height: 1.5;
@@ -102,11 +104,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #667eea;
+  color: var(--primary-green);
   font-weight: 600;
   margin-bottom: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .car-footer {
@@ -119,25 +121,27 @@
 .car-price {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #667eea;
+  color: var(--primary-green);
 }
 
 .btn-contact {
-  background: #667eea;
+  background: linear-gradient(135deg, var(--primary-orange), var(--orange-dark));
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-contact:hover {
-  background: #5568d3;
+  background: linear-gradient(135deg, var(--orange-dark), var(--primary-orange));
   transform: scale(1.05);
+  box-shadow: var(--shadow-md);
 }
 
 .seller-info {
-  background: #f9f9f9;
+  background: var(--bg-light);
   padding: 12px;
   border-radius: 8px;
   font-size: 0.9rem;

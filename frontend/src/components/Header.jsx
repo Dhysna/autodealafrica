@@ -9,9 +9,9 @@ function Header() {
           <span className="logo-text">Autodealafrica</span>
         </div>
         <nav className="nav">
-          <a href="#home">Home</a>
-          <a href="#cars">Browse Cars</a>
-          <a href="#about">About</a>
+          <a href="#home">Accueil</a>
+          <a href="#cars">Parcourir</a>
+          <a href="#about">À Propos</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>

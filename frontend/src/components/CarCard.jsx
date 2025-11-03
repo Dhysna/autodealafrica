@@ -2,7 +2,7 @@ import './CarCard.css'
 
 function CarCard({ car }) {
   const formatPrice = (price) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('fr-FR', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 0
@@ -10,12 +10,28 @@ function CarCard({ car }) {
   };
 
   const formatMileage = (mileage) => {
-    return new Intl.NumberFormat('en-US').format(mileage) + ' km';
+    return new Intl.NumberFormat('fr-FR').format(mileage) + ' km';
+  };
+
+  // Traduire les valeurs en français
+  const translateFuel = (fuel) => {
+    const translations = {
+      'Petrol': 'Essence',
+      'Diesel': 'Diesel',
+      'Electric': 'Électrique',
+      'Hybrid': 'Hybride',
+      'Gas': 'Gaz'
+    };
+    return translations[fuel] || fuel;
+  };
+
+  const translateTransmission = (transmission) => {
+    return transmission === 'Automatic' ? 'Automatique' : 'Manuelle';
   };
 
   return (
     <div className="car-card">
-      {car.featured && <div className="featured-badge">Featured</div>}
+      {car.featured && <div className="featured-badge">En Vedette</div>}
 
       <div className="car-image">
         <div className="placeholder-image">
@@ -31,11 +47,11 @@ function CarCard({ car }) {
         <div className="car-details">
           <div className="detail-item">
             <span className="detail-icon">⛽</span>
-            <span>{car.fuel}</span>
+            <span>{translateFuel(car.fuel)}</span>
           </div>
           <div className="detail-item">
             <span className="detail-icon">⚙️</span>
-            <span>{car.transmission}</span>
+            <span>{translateTransmission(car.transmission)}</span>
           </div>
           <div className="detail-item">
             <span className="detail-icon">🛣️</span>
@@ -61,7 +77,7 @@ function CarCard({ car }) {
         <div className="car-footer">
           <div className="car-price">{formatPrice(car.price)}</div>
           <button className="btn-contact">
-            Contact Seller
+            Contacter le Vendeur
           </button>
         </div>
 

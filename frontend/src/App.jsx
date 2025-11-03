@@ -84,10 +84,10 @@ function App() {
       const response = await axios.post(`${API_URL}/cars`, carData);
       setCars([response.data, ...cars]);
       setShowForm(false);
-      alert('Car listing added successfully!');
+      alert('Annonce ajoutée avec succès !');
     } catch (error) {
-      console.error('Error adding car:', error);
-      alert('Failed to add car listing');
+      console.error('Erreur lors de l\'ajout de la voiture:', error);
+      alert('Échec de l\'ajout de l\'annonce');
     }
   };
 
@@ -98,8 +98,8 @@ function App() {
       <main className="main-content">
         <section className="hero">
           <div className="container">
-            <h1>Find Your Perfect Car in Africa</h1>
-            <p>Browse thousands of quality vehicles from trusted dealers</p>
+            <h1>Trouvez Votre Voiture Idéale en Afrique</h1>
+            <p>Parcourez des milliers de véhicules de qualité auprès de concessionnaires de confiance</p>
           </div>
         </section>
 
@@ -110,7 +110,7 @@ function App() {
               className="btn-add-listing"
               onClick={() => setShowForm(!showForm)}
             >
-              {showForm ? 'Cancel' : '+ Add Your Listing'}
+              {showForm ? 'Annuler' : '+ Ajouter Votre Annonce'}
             </button>
           </div>
         </section>
@@ -126,12 +126,12 @@ function App() {
         <section className="results-section">
           <div className="container">
             <div className="results-header">
-              <h2>Available Cars</h2>
-              <p>{filteredCars.length} {filteredCars.length === 1 ? 'car' : 'cars'} found</p>
+              <h2>Voitures Disponibles</h2>
+              <p>{filteredCars.length} {filteredCars.length === 1 ? 'voiture trouvée' : 'voitures trouvées'}</p>
             </div>
 
             {loading ? (
-              <div className="loading">Loading cars...</div>
+              <div className="loading">Chargement des voitures...</div>
             ) : (
               <CarList cars={filteredCars} />
             )}

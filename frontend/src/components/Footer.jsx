@@ -7,15 +7,15 @@ function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Autodealafrica</h3>
-            <p>Your trusted platform for buying and selling quality cars across Africa</p>
+            <p>Votre plateforme de confiance pour acheter et vendre des voitures de qualité à travers l'Afrique</p>
           </div>
 
           <div className="footer-section">
-            <h4>Quick Links</h4>
+            <h4>Liens Rapides</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#cars">Browse Cars</a></li>
-              <li><a href="#about">About Us</a></li>
+              <li><a href="#home">Accueil</a></li>
+              <li><a href="#cars">Parcourir les Voitures</a></li>
+              <li><a href="#about">À Propos</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -23,12 +23,12 @@ function Footer() {
           <div className="footer-section">
             <h4>Contact</h4>
             <p>Email: info@autodealafrica.com</p>
-            <p>Phone: +234 123 456 7890</p>
+            <p>Téléphone: +234 123 456 7890</p>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2024 Autodealafrica. All rights reserved.</p>
+          <p>&copy; 2024 Autodealafrica. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

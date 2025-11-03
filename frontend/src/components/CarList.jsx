@@ -5,8 +5,8 @@ function CarList({ cars }) {
   if (cars.length === 0) {
     return (
       <div className="no-results">
-        <h3>No cars found</h3>
-        <p>Try adjusting your search filters</p>
+        <h3>Aucune voiture trouvée</h3>
+        <p>Essayez d'ajuster vos filtres de recherche</p>
       </div>
     )
   }

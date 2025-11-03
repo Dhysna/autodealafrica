@@ -1,6 +1,6 @@
 .header {
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: var(--bg-white);
+  box-shadow: var(--shadow-md);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -19,7 +19,7 @@
   gap: 10px;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #667eea;
+  color: var(--primary-green);
 }
 
 .logo-icon {
@@ -33,13 +33,29 @@
 
 .nav a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-dark);
   font-weight: 500;
   transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-orange);
+  transition: width 0.3s ease;
 }
 
 .nav a:hover {
-  color: #667eea;
+  color: var(--primary-orange);
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
