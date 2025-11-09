@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Chargement des Données</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background: #d4edda; color: #155724; }
+        .error { background: #f8d7da; color: #721c24; }
+        .info { background: #d1ecf1; color: #0c5460; }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Test de Chargement des Données Autodealafrica</h1>
+
+    <div id="status"></div>
+    <div id="results"></div>
+
+    <script>
+        const statusDiv = document.getElementById('status');
+        const resultsDiv = document.getElementById('results');
+
+        async function testDataLoading() {
+            try {
+                statusDiv.innerHTML = '<div class="info">⏳ Tentative de chargement de data/dummy_ads.json...</div>';
+
+                const response = await fetch('data/dummy_ads.json');
+
+                statusDiv.innerHTML += `<div class="info">📡 Statut HTTP: ${response.status} ${response.statusText}</div>`;
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                statusDiv.innerHTML += `<div class="success">✅ Données chargées avec succès!</div>`;
+                statusDiv.innerHTML += `<div class="success">📊 Nombre de véhicules: ${data.length}</div>`;
+
+                // Afficher quelques exemples
+                resultsDiv.innerHTML = '<h2>Exemples de Véhicules:</h2>';
+
+                data.slice(0, 5).forEach((vehicle, index) => {
+                    resultsDiv.innerHTML += `
+                        <div style="border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                            <h3>${index + 1}. ${vehicle.title}</h3>
+                            <p><strong>Prix:</strong> ${new Intl.NumberFormat('fr-FR').format(vehicle.price)} ${vehicle.currency}</p>
+                            <p><strong>Marque:</strong> ${vehicle.brand}</p>
+                            <p><strong>Année:</strong> ${vehicle.year}</p>
+                            <p><strong>Kilométrage:</strong> ${new Intl.NumberFormat('fr-FR').format(vehicle.mileage)} km</p>
+                            <p><strong>Carburant:</strong> ${vehicle.fuel}</p>
+                            <p><strong>Transmission:</strong> ${vehicle.transmission}</p>
+                        </div>
+                    `;
+                });
+
+                // Afficher le JSON brut (premiers véhicules)
+                resultsDiv.innerHTML += `
+                    <h2>JSON Brut (3 premiers véhicules):</h2>
+                    <pre>${JSON.stringify(data.slice(0, 3), null, 2)}</pre>
+                `;
+
+            } catch (error) {
+                statusDiv.innerHTML += `<div class="error">❌ Erreur: ${error.message}</div>`;
+                resultsDiv.innerHTML = `
+                    <div class="error">
+                        <h3>Détails de l'erreur:</h3>
+                        <pre>${error.stack}</pre>
+                        <h3>Vérifications à faire:</h3>
+                        <ul>
+                            <li>Le fichier data/dummy_ads.json existe-t-il ?</li>
+                            <li>Êtes-vous sur un serveur local ou en ouvrant le fichier directement ?</li>
+                            <li>Y a-t-il des erreurs CORS dans la console ?</li>
+                        </ul>
+                    </div>
+                `;
+                console.error('Erreur complète:', error);
+            }
+        }
+
+        // Tester au chargement
+        testDataLoading();
+
+        // Informations sur l'environnement
+        document.addEventListener('DOMContentLoaded', () => {
+            const envInfo = document.createElement('div');
+            envInfo.className = 'info';
+            envInfo.innerHTML = `
+                <h3>Informations sur l'environnement:</h3>
+                <ul>
+                    <li><strong>URL actuelle:</strong> ${window.location.href}</li>
+                    <li><strong>Protocol:</strong> ${window.location.protocol}</li>
+                    <li><strong>Host:</strong> ${window.location.host}</li>
+                    <li><strong>Pathname:</strong> ${window.location.pathname}</li>
+                </ul>
+            `;
+            document.body.insertBefore(envInfo, statusDiv);
+        });
+    </script>
+</body>
+</html>

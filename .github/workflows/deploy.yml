@@ -22,24 +22,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-          cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
-
-      - name: Install dependencies
+      - name: Prepare static files
         run: |
-          cd frontend
-          npm ci
-
-      - name: Build
-        run: |
-          cd frontend
-          npm run build
-        env:
-          VITE_API_URL: https://autodealafrica-api.onrender.com/api
+          mkdir -p _site
+          cp index.html _site/
+          cp styles.css _site/
+          cp app.js _site/
+          cp 404.html _site/
+          cp -r data _site/
+          # Copier les images si elles existent
+          if [ -d "public" ]; then
+            cp -r public _site/
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -47,7 +41,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: frontend/dist
+          # Déployer uniquement les fichiers statiques nécessaires
+          path: _site
 
   deploy:
     environment:
