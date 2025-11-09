@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Autodealafrica - Trouvez votre voiture idéale en Côte d'Ivoire. Plus de 1000 annonces de véhicules neufs et d'occasion.">
+    <meta name="keywords" content="voiture, automobile, Côte d'Ivoire, Abidjan, achat voiture, voiture occasion">
+    <meta name="author" content="Autodealafrica">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://autodealafrica.com/">
+    <meta property="og:title" content="Autodealafrica - Trouvez Votre Voiture Idéale">
+    <meta property="og:description" content="Le premier site d'annonces automobiles en Côte d'Ivoire">
+    <meta property="og:image" content="https://autodealafrica.com/images/og-image.jpg">
+
+    <title>Autodealafrica - Trouvez Votre Voiture Idéale en Côte d'Ivoire</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Autodealafrica",
+      "url": "https://autodealafrica.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://autodealafrica.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>Autodealafrica</span>
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#vehicules">Véhicules</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <a href="#vendre" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Vendre votre voiture
+                    </a>
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Trouvez Votre Voiture Idéale</h1>
+                <p class="hero-subtitle">Le premier site de petites annonces automobiles en Côte d'Ivoire</p>
+
+                <!-- Search & Filters -->
+                <div class="search-box">
+                    <div class="search-row">
+                        <div class="search-input-wrapper">
+                            <i class="fas fa-search"></i>
+                            <input
+                                type="text"
+                                id="searchInput"
+                                placeholder="Rechercher par marque, modèle..."
+                                class="search-input"
+                            >
+                        </div>
+
+                        <div class="filter-group">
+                            <select id="brandFilter" class="filter-select">
+                                <option value="">Toutes les marques</option>
+                            </select>
+
+                            <select id="fuelFilter" class="filter-select">
+                                <option value="">Type de carburant</option>
+                                <option value="Essence">Essence</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Hybride">Hybride</option>
+                                <option value="Électrique">Électrique</option>
+                            </select>
+
+                            <select id="transmissionFilter" class="filter-select">
+                                <option value="">Transmission</option>
+                                <option value="Manuelle">Manuelle</option>
+                                <option value="Automatique">Automatique</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="search-row">
+                        <div class="price-filter">
+                            <label for="minPrice">Prix Min (CFA)</label>
+                            <input type="number" id="minPrice" placeholder="0" class="price-input">
+                        </div>
+
+                        <div class="price-filter">
+                            <label for="maxPrice">Prix Max (CFA)</label>
+                            <input type="number" id="maxPrice" placeholder="100 000 000" class="price-input">
+                        </div>
+
+                        <button id="filterBtn" class="btn btn-secondary">
+                            <i class="fas fa-filter"></i>
+                            Filtrer
+                        </button>
+
+                        <button id="resetBtn" class="btn btn-outline">
+                            <i class="fas fa-redo"></i>
+                            Réinitialiser
+                        </button>
+                    </div>
+                </div>
+
+                <a href="#vendre" class="btn btn-hero">
+                    <i class="fas fa-plus-circle"></i>
+                    Ajouter votre annonce gratuitement
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-car stat-icon"></i>
+                    <h3 class="stat-number" data-target="1000">0</h3>
+                    <p class="stat-label">Véhicules Disponibles</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users stat-icon"></i>
+                    <h3 class="stat-number" data-target="500">0</h3>
+                    <p class="stat-label">Vendeurs Vérifiés</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-handshake stat-icon"></i>
+                    <h3 class="stat-number" data-target="2500">0</h3>
+                    <p class="stat-label">Ventes Réussies</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star stat-icon"></i>
+                    <h3 class="stat-number" data-target="98">0</h3>
+                    <p class="stat-label">% Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Info -->
+    <section class="results-info">
+        <div class="container">
+            <div class="results-header">
+                <h2>Nos Véhicules Disponibles</h2>
+                <div class="results-count">
+                    <span id="resultsCount">0</span> véhicule(s) trouvé(s)
+                </div>
+            </div>
+
+            <div class="sort-options">
+                <label for="sortSelect">Trier par:</label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="recent">Plus récent</option>
+                    <option value="price-asc">Prix croissant</option>
+                    <option value="price-desc">Prix décroissant</option>
+                    <option value="year-desc">Année décroissante</option>
+                    <option value="mileage-asc">Kilométrage croissant</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Grid -->
+    <section class="vehicles-section">
+        <div class="container">
+            <div id="vehiclesGrid" class="vehicles-grid">
+                <!-- Loading Skeleton -->
+                <div class="loading-skeleton">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="btn btn-load-more" style="display: none;">
+                    <i class="fas fa-chevron-down"></i>
+                    Charger plus de véhicules
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Vous souhaitez vendre votre véhicule ?</h2>
+                <p>Publiez votre annonce gratuitement et touchez des milliers d'acheteurs potentiels</p>
+                <a href="#vendre" class="btn btn-cta">
+                    <i class="fas fa-rocket"></i>
+                    Publier une annonce
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Autodealafrica</h3>
+                    <p>Le premier site de petites annonces automobiles en Côte d'Ivoire. Trouvez la voiture de vos rêves facilement.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#vehicules">Véhicules</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">À propos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Catégories</h4>
+                    <ul>
+                        <li><a href="#berline">Berlines</a></li>
+                        <li><a href="#suv">SUV</a></li>
+                        <li><a href="#pickup">Pick-up</a></li>
+                        <li><a href="#electrique">Électriques</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@autodealafrica.com">contact@autodealafrica.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Abidjan, Côte d'Ivoire
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Autodealafrica. Tous droits réservés.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Confidentialité</a>
+                    <a href="#terms">Conditions d'utilisation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="scroll-top" aria-label="Retour en haut">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Main JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>

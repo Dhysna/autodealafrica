@@ -1,0 +1,85 @@
+{
+  "_comment": "Exemple de données structurées JSON-LD pour une annonce automobile",
+  "_usage": "Ces données sont automatiquement générées par app.js pour chaque véhicule affiché. Elles améliorent le SEO et l'affichage dans les résultats de recherche Google.",
+
+  "@context": "https://schema.org/",
+  "@type": "Car",
+  "name": "Toyota Corolla 2018 - Excellent état",
+  "brand": {
+    "@type": "Brand",
+    "name": "Toyota"
+  },
+  "model": "Corolla",
+  "vehicleConfiguration": "Berline",
+  "productionDate": "2018",
+  "mileageFromOdometer": {
+    "@type": "QuantitativeValue",
+    "value": 45000,
+    "unitCode": "KMT"
+  },
+  "fuelType": "Essence",
+  "vehicleTransmission": "Automatique",
+  "color": "Gris Métallisé",
+  "image": [
+    "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800",
+    "https://images.unsplash.com/photo-1623869675781-80aa31f88e8c?w=800",
+    "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "8500000",
+    "priceCurrency": "CFA",
+    "availability": "https://schema.org/InStock",
+    "priceValidUntil": "2025-12-31",
+    "seller": {
+      "@type": "AutoDealer",
+      "name": "Autodealafrica",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Abidjan",
+        "addressCountry": "CI"
+      },
+      "telephone": "+225-XX-XX-XX-XX",
+      "email": "contact@autodealafrica.com"
+    },
+    "url": "https://autodealafrica.com/annonce/ad001"
+  },
+  "description": "Toyota Corolla 2018 en excellent état avec seulement 45 000 km au compteur. Entretien régulier effectué chez concessionnaire agréé. Intérieur impeccable avec sièges en tissu, climatisation automatique, système audio touchscreen. Véhicule non-fumeur, carnet d'entretien complet disponible.",
+  "itemCondition": "https://schema.org/UsedCondition",
+  "vehicleIdentificationNumber": "XXXXXXXXXXXXXXXXX",
+  "datePosted": "2025-11-05T10:30:00Z",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Nombre de portes",
+      "value": "4"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Nombre de places",
+      "value": "5"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Climatisation",
+      "value": "Automatique"
+    }
+  ],
+  "review": {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.8",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Client vérifié"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "12"
+  }
+}
